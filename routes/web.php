@@ -1,24 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// Показать таблицу на главной странице
 Route::get('/', 'AnimalController@showAll');
 
+// Показать форму создания животного
 Route::get('create', 'AnimalController@create');
 
+// Обработать данные с формы создания животного
 Route::post('add_animal', 'AnimalController@addAnimal');
 
+// Показать форму редактирования животного
 Route::get('edit/{id}', 'AnimalController@edit');
 
+// Обработать данные с формы редактирования животного
 Route::post('update_animal', 'AnimalController@updateAnimal');
 
-Route::post('delete/{id}', 'AnimalController@delete');
+// Удалить животное
+Route::get('delete/{id}', 'AnimalController@delete');
